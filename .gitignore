@@ -44,3 +44,6 @@ Thumbs.db
 # others
 .browserslistrc
 .editorconfig
+
+# Local Netlify folder
+.netlify
