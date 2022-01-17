@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 export interface Section {
 	name: string;
@@ -6,13 +7,27 @@ export interface Section {
   icon: string;
   rute: string;
 }
+
 @Component({
-	selector: 'app-root',
-	templateUrl: './app.component.html',
-	styleUrls: [ './app.component.scss' ]
+  selector: 'app-menu',
+  templateUrl: './menu.component.html',
+  styleUrls: ['./menu.component.scss']
 })
-export class AppComponent {
-	title = 'reactivate';
+export class MenuComponent implements OnInit {
+
+  activeLinkIndex = -1;
+  navLinks: any[] = new Array<any>();
+
+  constructor(private router: Router) { }
+
+  ngOnInit(): void {
+    this.router.events.subscribe((res) => {
+			this.activeLinkIndex = this.navLinks.indexOf(
+				this.navLinks.find((tab) => tab.link === '.' + this.router.url)
+			);
+		});
+  }
+  title = 'reactivate';
 	showFiller = false;
 	therapies: Section[] = [
 		{
@@ -38,7 +53,7 @@ export class AppComponent {
 		{
 			name: 'Portafolio',
 			updated: new Date('2/20/22'),
-      icon: 'contact_page',
+      icon: 'portrait',
       rute: ''
 		}
 	];
@@ -50,4 +65,13 @@ export class AppComponent {
       rute: ''
 		}
 	];
+
+  hola(x: any) {
+    console.log(x);
+  }
+
+  hola2(x: any) {
+    console.log(x);
+  }
+
 }
