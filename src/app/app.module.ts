@@ -14,9 +14,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { SharedComponentModule } from './shared-component/shared-component.module';
 import { MenuComponent } from './menu/menu.component';
+import { TherapyComponent } from './therapy/therapy.component';
 
 @NgModule({
-	declarations: [ AppComponent, HomeComponent, MenuComponent ],
+	declarations: [ AppComponent, HomeComponent, MenuComponent, TherapyComponent ],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,

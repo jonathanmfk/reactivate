@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from 'src/app/home/home.component';
+import { TherapyComponent } from './therapy/therapy.component';
 
 const routes: Routes = [
 	{ path: '', component: HomeComponent },
-	{ path: 'inicio', redirectTo: '', pathMatch: 'full' },
+	{ path: 'therapy', component: TherapyComponent },
 	/* { path: 'inicio', component: HomeComponent },
 	{ path: 'inicio', component: HomeComponent },
 	{ path: 'inicio', component: HomeComponent }, */

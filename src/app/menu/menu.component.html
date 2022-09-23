@@ -12,11 +12,13 @@
     <mat-nav-list>
       <mat-selection-list #shoes [multiple]="false">
         <div mat-subheader>Terapías</div>
-        <mat-list-option *ngFor="let therapy of therapies" [value]="therapy.rute" (click)="hola(therapy.updated)">
+
+        <mat-list-option *ngFor="let therapy of therapies" [value]="therapy.rute" (click)="_goToTherapy(therapy.rute)">
           <mat-icon mat-list-icon>{{therapy.icon}}</mat-icon>
           <div mat-line>{{therapy.name}}</div>
           <div mat-line> {{therapy.updated | date}} </div>
         </mat-list-option>
+
         <mat-divider></mat-divider>
         <div mat-subheader>Portafolio</div>
         <mat-list-option *ngFor="let exp of experience" (click)="hola2(exp.icon)">
@@ -24,6 +26,7 @@
           <div mat-line>{{exp.name}}</div>
           <div mat-line> {{exp.updated | date}} </div>
         </mat-list-option>
+
         <mat-divider></mat-divider>
         <div mat-subheader>Contacto</div>
         <mat-list-option *ngFor="let cont of contact">

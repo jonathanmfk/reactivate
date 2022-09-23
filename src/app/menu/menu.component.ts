@@ -34,7 +34,7 @@ export class MenuComponent implements OnInit {
 			name: 'Terapía 1',
 			updated: new Date('1/1/22'),
       icon: 'personal_injury',
-      rute: ''
+      rute: 'therapy1'
 		},
 		{
 			name: 'Terapía 2',
@@ -66,8 +66,8 @@ export class MenuComponent implements OnInit {
 		}
 	];
 
-  hola(x: any) {
-    console.log(x);
+  _goToTherapy(therapyRute: any) {
+		this.router.navigate(['/', therapyRute]);
   }
 
   hola2(x: any) {
